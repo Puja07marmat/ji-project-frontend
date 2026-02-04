@@ -22,10 +22,11 @@ const userSlice = createSlice({
                 state.user.isPremium = action.payload;
             }
         }
+
     },
 });
 
-export const { userLoggedInDetails, 
+export const { userLoggedInDetails,
     userLoggedOutDetails,
-     updateUserPremium } = userSlice.actions;
+    updateUserPremium } = userSlice.actions;
 export default userSlice.reducer;

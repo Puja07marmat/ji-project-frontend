@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -29,7 +28,6 @@ export default function LoginForm() {
     const router = useRouter();
     const dispatch = useDispatch();
     const userData = useSelector((state) => state.user);
-
     if (userData.isLoggedIn) {
         return router.push("/");
     }
@@ -66,7 +64,7 @@ export default function LoginForm() {
 
 
     return (
-        <div className="h-screen   flex items-center justify-center">
+        <div className="h-screen flex items-center justify-center">
             <Card className=" w-full max-w-sm">
                 <CardHeader>
                     <CardTitle className="text-xl">Sign Up</CardTitle>

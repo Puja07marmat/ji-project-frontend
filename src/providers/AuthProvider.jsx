@@ -24,6 +24,8 @@ const AuthProvider = ({ children }) => {
             } finally {
                 setLoading(false);
             }
+  
+
         };
         fetcher();
     }, [dispatch]);

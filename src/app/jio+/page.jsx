@@ -1,4 +1,3 @@
-
 import { api, ENDPOINT, getStreamingVideoThumbnail } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import Link from "next/link";

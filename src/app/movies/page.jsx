@@ -13,13 +13,26 @@ export default function Home() {
                 return (await api.get(ENDPOINT.fetchComedyMovies)).data.response?.results;
             },
         },
+        // {
+        //     label: "Top Horror Movies",
+        //     href: "horror",
+        //     fetcher: async () => {
+        //         return (await api.get(ENDPOINT.fetchHorrorMovies)).data.response?.results;
+        //     },
+        // },
         {
-            label: "Top Horror Movies",
-            href: "horror",
-            fetcher: async () => {
-                return (await api.get(ENDPOINT.fetchHorrorMovies)).data.response?.results;
-            },
-        },
+    href: "horror",
+    fetcher: async () => {
+        try {
+            const response = await api.get(ENDPOINT.fetchHorrorMovies);
+            // Safely return data, agar data nahi hai toh empty array []
+            return response?.data?.response?.results || [];
+        } catch (error) {
+            console.error("Horror Movies API Error:", error.message);
+            return []; // Error aane par page crash nahi hoga, bas list khali dikhegi
+        }
+    },
+},
         {
             label: "Top Romance Movies",
             href: "romance",
@@ -31,13 +44,18 @@ export default function Home() {
             label: "Top Action Movies",
             href: "action",
             fetcher: async () => {
-                return (await api.get(ENDPOINT.fetchActionMovies)).data.response?.results;
+                return (await api.get(ENDPOINT.fetchActionMovies)).data.data?.results;
             },
         },
     ];
-    const getMoviesBannerData = async () => {
-        return (await api.get(ENDPOINT.fetchAnimeMovies)).data?.response?.results;
-    };
+    
+     // --- Is puraane hisse ko dhoondiye ---
+const getMoviesBannerData = async () => {
+    return (await api.get(ENDPOINT.fetchAnimeMovies)).data?.response?.results;
+};
+
+
+// --- Aur use is naye code se badal dijiye (Replace) ---
 
     return (
         <>

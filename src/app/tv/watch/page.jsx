@@ -1,4 +1,5 @@
 
+
 import ShareButton from "@/components/atom/ShareButton";
 import WishlistButton from "@/components/atom/WishListButton";
 import { buttonVariants } from "@/components/ui/button";
@@ -8,7 +9,6 @@ import Link from "next/link";
 import React from "react";
 const page = async ({ searchParams: { id,poster_path } }) => {
     const details = (await api.get(ENDPOINT.getTvShowsDetails(id))).data.data.results?.[0];
-
     console.log("posterpath",poster_path)
 
     return (

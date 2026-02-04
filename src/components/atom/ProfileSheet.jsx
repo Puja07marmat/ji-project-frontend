@@ -4,10 +4,10 @@ import Image from "next/image";
 import { ChevronRightIcon, ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { navLinks } from "../section/Header";
-import { useSelector , useDispatch} from "react-redux";
-import {userLoggedOutDetails} from "@/redux/userSlice";
-import {api,ENDPOINT} from "@/lib/api";
-import {useRouter} from "next/navigation";
+import { useSelector, useDispatch } from "react-redux";
+import { userLoggedOutDetails } from "@/redux/userSlice";
+import { api, ENDPOINT } from "@/lib/api";
+import { useRouter } from "next/navigation";
 
 const ProfileSheet = () => {
     const [open, setOpen] = useState(false);
@@ -31,36 +31,22 @@ const ProfileSheet = () => {
     return (
         <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger>
-                {/* <Image
-                    src="https://i.pinimg.com/originals/7c/f7/cd/7cf7cda75b7c42348c383acbdf17129f.png"
+                <Image
+                    src="/profile.avif"
                     alt="Profile Icon"
                     className="ml-4 h-10 w-10 rounded-full"
                     width={40}
                     height={40}
-                /> */}
-                 <Image 
-                       src="https://img.freepik.com/premium-photo/male-female-profile-avatar-user-avatars-gender-icons_1020867-75012.jpg" 
-                       alt="Example Image" 
-                       width={40} 
-                       height={40} 
-                       unoptimized
-                    />
+                />
             </SheetTrigger>
             <SheetContent side={"right"} className="px-6">
-                <div className="bg-slate-700/30 p-6 flex flex-col items-center gap-1.5 mt-[10px] rounded-lg">
-                    {/* <Image
+                <div className="bg-slate-700/30 p-6 flex flex-col items-center gap-2 mt-[100px] rounded-lg">
+                    {!userData.isLoggedIn ? <Image
                         src="/profile.avif"
                         alt="Profile Icon"
                         className="h-[100px] w-[100px] rounded-full -mt-[60px]"
                         width={40}
                         height={40}
-                    /> */}
-                     {!userData.isLoggedIn ? <Image 
-                       src="https://img.freepik.com/premium-photo/male-female-profile-avatar-user-avatars-gender-icons_1020867-75012.jpg" 
-                       alt="Example Image" 
-                       width={40} 
-                       height={40} 
-                       unoptimized
                     /> :
                      <div className="ml-4 h-10 w-10 rounded-full bg-[#0059A3] text-xl font-semibold flex items-center justify-center">
                         {userData.user ? userData.user.name.charAt(0).toUpperCase() : ""}
@@ -73,7 +59,7 @@ const ProfileSheet = () => {
                         className="rounded-full font-medium mt-4 text-base px-4 py-2 bg-pink-600"
                         onClick={() => {
                             setOpen(false);
-                            if(userData.isLoggedIn){
+                            if (userData.isLoggedIn) {
                                 handleLogout()
                             }
                         }}
@@ -87,7 +73,7 @@ const ProfileSheet = () => {
                         className="flex items-center justify-between px-2 py-4 text-sm"
                         onClick={() => {
                             setOpen(false);
-                           
+                            
                         }}
                     >
                         Subscribe Now

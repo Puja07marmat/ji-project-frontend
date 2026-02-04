@@ -4,7 +4,9 @@ import { Skeleton } from '../atom/Skeleton';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Inbox } from 'lucide-react';
+import { Inbox } from "lucide-react";
+
+
 async function BannerSection({ fetcher }) {
   return (
     <Suspense fallback={<BannerSectionFallback />}>
@@ -20,14 +22,20 @@ async function BannerSectionContent({ fetcher }) {
   if (!data || data.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center w-full h-[500px] py-12">
-         <Inbox
+        {/* <InboxIcon
           className="w-32 h-32 text-slate-400 mb-10"
           strokeWidth={1.2}
-        />
+        /> */}
+        <Inbox
+  className="w-32 h-32 text-slate-400 mb-10"
+  strokeWidth={1.2}
+/>
+
         <p className="text-lg text-gray-500">No items found.</p>
       </div>
     );
   }
+
   return (
     <Carousel
       opts={{
@@ -72,3 +80,4 @@ function BannerSectionFallback() {
 }
 
 export default BannerSection;
+

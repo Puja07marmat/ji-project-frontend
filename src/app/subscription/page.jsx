@@ -110,15 +110,13 @@ function Subscription() {
     }
     return (
         <div className="h-screen mt-[74px] w-full">
-              <Image
+            <Image
                 src="/motu-patlu.png"
                 alt="Background Image"
                 fill={true}
                 quality={100}
                 className="-z-50 hidden md:block object-fit"
-            /> 
-              
-       
+            />
 
             <div className="mx-auto p-4 md:pt-8 pt-4">
                 <div className="flex items-center justify-between md:mb-8 ">
@@ -130,16 +128,13 @@ function Subscription() {
                     </Link>
                 </div>
 
-                  <Image
+                <Image
                     src="/motu-patlu.png"
                     alt="Background Image"
                     className="w-full md:hidden rounded-lg mb-4 h-[100px] object-fit"
                     width={354}
                     height={60}
-                />  
-                  
-                  
-
+                />
 
                 <div className="md:mx-16">
                     <h1 className="md:text-4xl text-2xl  leading-none font-black md:text-12 mb-4 text-nowrap">
@@ -175,8 +170,6 @@ function Subscription() {
                 </div>
             </div>
         </div>
-        
-
     )
 }
 
