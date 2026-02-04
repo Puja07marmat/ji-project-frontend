@@ -9,9 +9,11 @@ export default function Home() {
         {
             label: "Top Comedy Movies",
             href: "comedy",
-            fetcher: async () => {
-                return (await api.get(ENDPOINT.fetchComedyMovies)).data.response?.results;
+           fetcher: async () => {
+                 return (await api.get(ENDPOINT.fetchComedyMovies)).data.response?.results;
             },
+          
+
         },
         // {
         //     label: "Top Horror Movies",
